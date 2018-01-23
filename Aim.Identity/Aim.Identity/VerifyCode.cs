@@ -28,8 +28,7 @@ namespace Aim.Identity
             //颜色列表，用于验证码、噪线、噪点 
             Color[] color =
             {
-                Color.Black, Color.Red, Color.Blue, Color.Green, Color.Orange, Color.Brown, Color.Brown,
-                Color.DarkBlue
+                Color.Black, Color.Red, Color.Blue, Color.Green, Color.Orange, Color.Brown, Color.DarkBlue
             };
             //字体列表，用于验证码 
             string[] font = {"Times New Roman"};
@@ -47,7 +46,7 @@ namespace Aim.Identity
                 chkCode += character[rnd.Next(character.Length)];
             }
             //写入Session、验证码加密
-            HttpContext.Current.Session["ExfreshVerifycode"] = chkCode.ToLower();
+            HttpContext.Current.Session["AimVerifycode"] = chkCode.ToLower();
             //创建画布
             Bitmap bmp = new Bitmap(codeW, codeH);
             Graphics g = Graphics.FromImage(bmp);
